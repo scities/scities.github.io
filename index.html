@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
-	.block {
-		fill: #333;
-		stroke: #fff;
-	}
+    .block {
+        fill: #333;
+	stroke: #fff;
+    }
 
-	.block:hover {
-		fill: green;
-	}
-
+    .block:hover {
+	fill: green;
+    }
 </style>
 <body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 
-<b>Scities</b> - Science of cities<br>
-Coming soon!
 
-<p>
-<button class="on" id="button">Boom!</button>
-<button class="off" id ="butoff">Repair</button>
-</p>
+<div id="wrapper" style="text-align: center">    
+	<h1>Scities</h1>
+	Science of cities - Coming soon!<p>&nbsp;</p>
+</div>
 
-<div id="map"></div>
+<div id="wrapper" style="text-align: center">    
+    <div id="map" style="display: inline-block;"></div>
+</div>
+
+<div id="wrapper" style="text-align: center">    
+	<button class="on" id="button">Boom!</button>
+	<button class="off" id ="butoff">Repair</button>
+
+
+</div>
 
 </body>
-
-
 
 
 
@@ -40,8 +44,8 @@ for (var i = 0; i < 100000; i++) {           //Loop 25 times
     blocks.push([newNumber1,newNumber2]);             //Add new number to array
 }
 
-var width = 1200,
-    height = 600;
+var width = 1000,
+    height = 400;
 
 var svg = d3.select("#map").append("svg")
     .attr("width", width)
