@@ -1,5 +1,4 @@
-# scities.github.io
-Scities' website
+# Scities 
 
 Scities is a research collective focused on the quantitative aspects of urban
 systems. Our research spans several aspects of the science of cities such as

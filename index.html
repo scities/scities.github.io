@@ -3,11 +3,21 @@
 <head>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Lato:300,300italic|Inconsolata' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lustria' rel='stylesheet' type='text/css'>
 <style>
-    body {
-        font-family: "Lato",;
+   html {
+        border-top: 5px solid #343434;
+        border-left: 5px solid #343434;
+        border-right: 5px solid #343434;
+        border-bottom: 5px solid #343434;
+   }
+   body {
+        color: #343434;
+        /*background: oldlace;*/
+        background: #fffff8;
+        font-family: "Lato",sans-serif;
+        margin: 0;
     }
     h1 {
           text-align: center;
@@ -24,22 +34,95 @@
           padding: 1em;
           margin: 0;
     }
+    
+    .people {
+        margin-top: 5em;
+        margin-bottom: 0;
+        width: 700px;
+        text-align:center;
+        padding: 3em 0em 6em 0em; 
+        margin:auto;
+    }
+
+    .people ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .publications {
+        margin: auto;
+        margin-top: 5em;
+        margin-bottom: 0;
+        color: #fffff8;
+        padding: 3em 0em 6em 0em;   background: #343434;
+    }
+
+    .content {
+        width:700px;
+        text-align:left;
+        margin:auto;
+    }
+
+    .publications h3 {
+        font-family:"Lato", sans-serif;
+        text-align:left;
+        font-style: italic;
+        font-size: 18px;
+    }
+
+    .manifesto {
+        margin-top: 5em;
+        margin-bottom: 0;
+        padding: 3em 0em 6em 0em;   background: #343434;
+        color: #fffff8;
+    }
+    .text{
+        font-family: 'Lustria', serif;
+        font-weight: 300;
+        font-size: 17px;
+        width: 700px;
+        text-align:left;
+        margin:auto;
+    }
+    footer {
+        text-align: center;
+        background: #fffff8;
+        color: #343434;
+        font-size: 15px;
+        padding-bottom: 0px;
+            margin-top:5px;
+                margin-bottom:5px;
+    }
+
     .block {
         fill: #333;
 	stroke: #fff;
     }
 
+    .sidenote, .marginnote { float: right;
+                          clear: right;
+                          margin-right: -40%;
+                          width: 30%;
+                          margin-top: 0;
+                          margin-bottom: 0;
+                          font-size: 13px;
+                          line-height: 1.;
+                          vertical-align: baseline;
+                          position: relative; }
+
     .block:hover {
-	fill: green;
+	fill: #333;
     }
 </style>
 </head>
 
 <body>
-<div id="wrapper" style="text-align: center">    
+<div id="title" style="text-align: center">    
 	<h1>Scities</h1>
-	Science of cities - Coming soon!<p>&nbsp;</p>
+        <h2>Science of Cities</h2>
 </div>
+
 
 
 <div id="wrapper" style="text-align: center">    
@@ -47,15 +130,66 @@
 </div>
 
 <div id="wrapper" style="text-align: center">    
-	<button class="on" id="button">Boom!</button>
-	<button class="off" id ="butoff">Repair</button>
-
-
+    <button class="on" id="button">Boom!</button>
+    <button class="off" id ="butoff">Repair</button>
 </div>
 
+
+
+<div class="manifesto">
+    <h2>Science of cities?</h2>
+
+    <div class="text">
+        An unexpected consequence of the digital revolution is the availability of
+        <b>large amounts of data</b> and <b>powerful tools</b> to analyse them.
+        New data sources*,<span class="marginnote">* Mobile phone data,
+            satellite pictures, digitized maps</span>
+        more comprehensive and precise than traditional sources are enriching our
+        knowledge about cities.
+
+
+        <p>New ways to analyse these data, based on the recent developments in <b>network
+            science</b> and <b>statistical physics</b> have emerged and help us get a
+        better understanding of the mechanisms that underpin the surprisingly regular
+        behaviour of urban systems.
+
+    </div>
+</div>
+
+<div class="people">
+    <h2>People</h2>
+
+    <ul>
+        <li>Jane Doe</li>
+        <li>John Doe</li>
+        <li>Richard Roe</li>
+    </ul>
+</div>
+
+<div class="publications">
+    <div class="content">
+    <h2>Publications</h2>
+   
+    <h3>General</h3>
+
+    <h3>Cities as systems</h3>
+
+    <h3>And systems of cities</h3>
+
+    <h3>Urban networks</h3>
+
+    <h3>Individual behaviour and urban traffic</h3>
+    </div>
+</div>
+
+<footer>
+    -- Copyright &copy <script type="text/javascript">
+var d = new Date()
+document.write(d.getFullYear())
+</script> Scities --
+</footer>
+
 </body>
-
-
 
 <script>
 
