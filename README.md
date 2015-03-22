@@ -7,3 +7,7 @@ systems. Our research spans several aspects of the science of cities such as
 + Measuring and understanding scaling relationships
 + Understanding city form
 + Systems of cities
+
+## Authors
+
+Rémi Louf <remi.louf@sciti.es>
