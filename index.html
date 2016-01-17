@@ -13,8 +13,8 @@
 </script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
-<link href='//fonts.googleapis.com/css?family=Lato:300,300italic|Inconsolata' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Lustria' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic' rel='stylesheet' type='text/css'>
 <style>
    html {
         border-top: 5px solid #343434;
@@ -26,23 +26,38 @@
         color: #343434;
         /*background: oldlace;*/
         background: #fffff8;
-        font-family: "Lato",sans-serif;
         margin: 0;
+    }
+   .wrapper{
+       padding-bottom:1em;
+    }
+    .title{
+        line-height:40px;
     }
     h1 {
           text-align: center;
-          font-size: 80px;
-          font-weight: 300;
+          font-size: 60px;
+          font-style: normal;
           margin: 0;
+          padding-top: 1em;
+          font-weight:300;
+          font-family: "Crimson Text", serif;
+              text-transform: uppercase;
     }
-
+    h1 i{
+          font-size: 100px;
+          font-style: italic;
+          font-weight:50;
+          font-family: "Quattrocento",sans-serif;
+          padding-right:5px;
+    }
     h2 {
-          font-size: 22px;
+          font-size: 25px;
           text-align: center;
           font-style: italic;
-          font-weight: 300;
-          padding: 1em;
+              font-weight:200;
           margin: 0;
+          font-family: "Crimson Text", serif;
     }
     
     .people {
@@ -75,7 +90,7 @@
     }
 
     .publications h3 {
-        font-family:"Lato", sans-serif;
+        font-family:"Quattrocento", sans-serif;
         text-align:left;
         font-style: italic;
         font-size: 18px;
@@ -128,14 +143,14 @@
 </head>
 
 <body>
-<div id="title" style="text-align: center">    
-	<h1>Scities</h1>
+<div class="title" style="text-align: center">    
+    <h1><i>S</i>cities</h1>
         <h2>Science of Cities</h2>
 </div>
 
 
 
-<div id="wrapper" style="text-align: center">    
+<div class="wrapper" style="text-align: center">    
     <div id="map" style="display: inline-block;"></div>
 </div>
 
@@ -159,13 +174,13 @@ document.write(d.getFullYear())
 
 var blocks = [];                        //Initialize empty array
 for (var i = 0; i < 100000; i++) {           //Loop 25 times
-    var newNumber1 = (Math.random()-0.5) * 200;  //New random number (0-30)
-    var newNumber2 = (Math.random()-0.5) * 200;  //New random number (0-30)
+    var newNumber1 = (Math.random()-0.5) * 50;  //New random number (0-30)
+    var newNumber2 = (Math.random()-0.5) * 50;  //New random number (0-30)
     blocks.push([newNumber1,newNumber2]);             //Add new number to array
 }
 
 var width = 1000,
-    height = 400;
+    height = 450;
 
 var svg = d3.select("#map").append("svg")
     .attr("width", width)
