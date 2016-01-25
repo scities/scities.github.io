@@ -16,38 +16,64 @@
         color: #343434;
         /*background: oldlace;*/
         background: #fffff8;
-        font-family: "Lato",sans-serif;
         margin: 0;
+    }
+   .wrapper{
+       padding-bottom:1em;
+    }
+    .title{
+        line-height:40px;
     }
     h1 {
           text-align: center;
-          font-size: 80px;
-          font-weight: 300;
+          font-size: 60px;
+          font-style: normal;
           margin: 0;
+          padding-top: 1em;
+          font-weight:300;
+          font-family: "Crimson Text", serif;
+              text-transform: uppercase;
     }
-
+    h1 i{
+          font-size: 100px;
+          font-style: italic;
+          font-weight:50;
+          font-family: "Quattrocento",sans-serif;
+          padding-right:5px;
+    }
     h2 {
-          font-size: 22px;
+          font-size: 25px;
           text-align: center;
           font-style: italic;
-          font-weight: 300;
-          padding: 1em;
+              font-weight:200;
           margin: 0;
+          font-family: "Crimson Text", serif;
     }
-    
     .people {
         margin-top: 5em;
         margin-bottom: 0;
         width: 700px;
-        text-align:center;
+        text-align:left;
         padding: 3em 0em 6em 0em; 
         margin:auto;
+    } 
+    .people p {
+        border-top: dotted 1px rgba(92, 98, 101, .75);
+        font-family: "Crimson Text", serif;
+        font-weight:200;
+        padding-top:20px;
     }
 
     .people ul {
         list-style-type: none;
         padding: 0px;
         margin: 0px;
+    }
+    .people h1{
+          font-size:50px;
+          font-weight:400;
+          text-align:center;
+          font-family: "Quattrocento",sans-serif;
     }
 
     .publications {
@@ -57,6 +83,14 @@
         color: #fffff8;
         padding: 3em 0em 6em 0em;   background: #343434;
     }
+    .publications p {
+        border-top: dotted 1px rgba(92, 98, 101, .75);
+        font-family: "Crimson Text", serif;
+        font-weight:200;
+        padding-top:20px;
+        width:700px;
+        margin:auto;
+    }
 
     .content {
         width:700px;
@@ -65,10 +99,41 @@
     }
 
     .publications h3 {
-        font-family:"Lato", sans-serif;
+        font-family:"Quattrocento", sans-serif;
         text-align:left;
         font-style: italic;
         font-size: 18px;
+    }
+    .projects {
+        margin-top: 5em;
+        margin-bottom: 0;
+        padding: 3em 0em 6em 0em;   color: #343434;
+        background: #fffff8;
+        width: 700px;
+        margin:auto;
+    }
+    .projects p{
+        width: 700px;
+        text-align:left;
+        padding: 3em 0em 6em 0em; 
+        margin:auto;
+      font-family: "Crimson Text", serif;
+                  font-weight:200;
+    }
+    .projects h1{
+          font-size:50px;
+          font-weight:400;
+          text-align:center;
+          padding-bottom:20px
+          font-family: "Quattrocento",sans-serif;
+    }
+    .projects h2{
+          border-bottom: dotted 1px rgba(92, 98, 101, .75);
+          font-size:30px;
+          font-weight:200;
+          text-align:left;
+          padding-bottom:20px
+          font-family: "Quattrocento",sans-serif;
     }
 
     .manifesto {
@@ -76,6 +141,14 @@
         margin-bottom: 0;
         padding: 3em 0em 6em 0em;   background: #343434;
         color: #fffff8;
+    }
+    .manifesto p{
+        width: 700px;
+        text-align:left;
+        padding: 3em 0em 6em 0em; 
+        margin:auto;
+      font-family: "Crimson Text", serif;
+                  font-weight:200;
     }
     .text{
         font-family: 'Lustria', serif;
@@ -91,8 +164,8 @@
         color: #343434;
         font-size: 15px;
         padding-bottom: 0px;
-            margin-top:5px;
-                margin-bottom:5px;
+        margin-top:5px;
+        margin-bottom:5px;
     }
 
     .block {
@@ -120,8 +193,178 @@
 <body>
 <div id="title" style="text-align: center">    
 	<h1>404</h1>
-        [Red marker performing random walk on London's street network. Leaflet
-        to move the map around with the marker]
+        <div id='404'></div>
         <h2>"Not all those who wander are lost."</h2>
 </div>
+
+<script>
+
+var width = 700,
+    height = 7000;
+
+var N = 1 << 0,
+    S = 1 << 1,
+    W = 1 << 2,
+    E = 1 << 3;
+
+var cellSize = 4,
+    cellSpacing = 4,
+    cellWidth = Math.floor((width - cellSpacing) / (cellSize + cellSpacing)),
+    cellHeight = Math.floor((height - cellSpacing) / (cellSize + cellSpacing)),
+    cells = generateMaze(cellWidth, cellHeight), // each cell’s edge bits
+    distance = 0,
+    visited = new Array(cellWidth * cellHeight),
+    frontier = [(cellHeight - 1) * cellWidth];
+
+var canvas = d3.select("404").append("canvas")
+    .attr("width", width)
+    .attr("height", height);
+
+var context = canvas.node().getContext("2d");
+
+context.translate(
+  Math.round((width - cellWidth * cellSize - (cellWidth + 1) * cellSpacing) / 2),
+  Math.round((height - cellHeight * cellSize - (cellHeight + 1) * cellSpacing) / 2)
+);
+
+context.fillStyle = "#fff";
+for (var y = 0, i = 0; y < cellHeight; ++y) {
+  for (var x = 0; x < cellWidth; ++x, ++i) {
+    fillCell(i);
+    if (cells[i] & S) fillSouth(i);
+    if (cells[i] & E) fillEast(i);
+  }
+}
+
+d3.timer(function() {
+  if (!(n0 = frontier.length)) return true;
+
+  context.fillStyle = d3.hsl(distance++ % 360, 1, .5) + "";
+
+  if (distance & 1) {
+    for (var i = 0; i < n0; ++i) {
+      fillCell(frontier[i]);
+    }
+  } else {
+    var frontier1 = [],
+        i0,
+        i1,
+        n0;
+
+    for (var i = 0; i < n0; ++i) {
+      i0 = frontier[i];
+      if (cells[i0] & E && !visited[i1 = i0 + 1]) visited[i1] = true, fillEast(i0), frontier1.push(i1);
+      if (cells[i0] & W && !visited[i1 = i0 - 1]) visited[i1] = true, fillEast(i1), frontier1.push(i1);
+      if (cells[i0] & S && !visited[i1 = i0 + cellWidth]) visited[i1] = true, fillSouth(i0), frontier1.push(i1);
+      if (cells[i0] & N && !visited[i1 = i0 - cellWidth]) visited[i1] = true, fillSouth(i1), frontier1.push(i1);
+    }
+
+    frontier = frontier1;
+  }
+});
+
+function fillCell(i) {
+  var x = i % cellWidth, y = i / cellWidth | 0;
+  context.fillRect(x * cellSize + (x + 1) * cellSpacing, y * cellSize + (y + 1) * cellSpacing, cellSize, cellSize);
+}
+
+function fillEast(i) {
+  var x = i % cellWidth, y = i / cellWidth | 0;
+  context.fillRect((x + 1) * (cellSize + cellSpacing), y * cellSize + (y + 1) * cellSpacing, cellSpacing, cellSize);
+}
+
+function fillSouth(i) {
+  var x = i % cellWidth, y = i / cellWidth | 0;
+  context.fillRect(x * cellSize + (x + 1) * cellSpacing, (y + 1) * (cellSize + cellSpacing), cellSize, cellSpacing);
+}
+
+function generateMaze(cellWidth, cellHeight) {
+  var cells = new Array(cellWidth * cellHeight),
+      frontier = minHeap(function(a, b) { return a.weight - b.weight; }),
+      startIndex = (cellHeight - 1) * cellWidth;
+
+  cells[startIndex] = 0;
+  frontier.push({index: startIndex, direction: N, weight: Math.random()});
+  frontier.push({index: startIndex, direction: E, weight: Math.random()});
+
+  while ((edge = frontier.pop()) != null) {
+    var edge,
+        i0 = edge.index,
+        d0 = edge.direction,
+        i1 = i0 + (d0 === N ? -cellWidth : d0 === S ? cellWidth : d0 === W ? -1 : +1),
+        x0 = i0 % cellWidth,
+        y0 = i0 / cellWidth | 0,
+        x1,
+        y1,
+        d1,
+        open = cells[i1] == null; // opposite not yet part of the maze
+
+    if (d0 === N) x1 = x0, y1 = y0 - 1, d1 = S;
+    else if (d0 === S) x1 = x0, y1 = y0 + 1, d1 = N;
+    else if (d0 === W) x1 = x0 - 1, y1 = y0, d1 = E;
+    else x1 = x0 + 1, y1 = y0, d1 = W;
+
+    if (open) {
+      cells[i0] |= d0, cells[i1] |= d1;
+      if (y1 > 0 && cells[i1 - cellWidth] == null) frontier.push({index: i1, direction: N, weight: Math.random()});
+      if (y1 < cellHeight - 1 && cells[i1 + cellWidth] == null) frontier.push({index: i1, direction: S, weight: Math.random()});
+      if (x1 > 0 && cells[i1 - 1] == null) frontier.push({index: i1, direction: W, weight: Math.random()});
+      if (x1 < cellWidth - 1 && cells[i1 + 1] == null) frontier.push({index: i1, direction: E, weight: Math.random()});
+    }
+  }
+
+  return cells;
+}
+
+function minHeap(compare) {
+  var heap = {},
+      array = [],
+      size = 0;
+
+  heap.empty = function() {
+    return !size;
+  };
+
+  heap.push = function(value) {
+    up(array[size] = value, size++);
+    return size;
+  };
+
+  heap.pop = function() {
+    if (size <= 0) return;
+    var removed = array[0], value;
+    if (--size > 0) value = array[size], down(array[0] = value, 0);
+    return removed;
+  };
+
+  function up(value, i) {
+    while (i > 0) {
+      var j = ((i + 1) >> 1) - 1,
+          parent = array[j];
+      if (compare(value, parent) >= 0) break;
+      array[i] = parent;
+      array[i = j] = value;
+    }
+  }
+
+  function down(value, i) {
+    while (true) {
+      var r = (i + 1) << 1,
+          l = r - 1,
+          j = i,
+          child = array[j];
+      if (l < size && compare(array[l], child) < 0) child = array[j = l];
+      if (r < size && compare(array[r], child) < 0) child = array[j = r];
+      if (j === i) break;
+      array[i] = child;
+      array[i = j] = value;
+    }
+  }
+
+  return heap;
+}
+
+d3.select(self.frameElement).style("height", height + "px");
+
+</script>
 </body>
