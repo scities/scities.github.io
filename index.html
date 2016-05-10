@@ -59,20 +59,31 @@
           margin: 0;
           font-family: "Crimson Text", serif;
     }
-    
     .people {
         margin-top: 5em;
         margin-bottom: 0;
         width: 700px;
-        text-align:center;
+        text-align:left;
         padding: 3em 0em 6em 0em; 
         margin:auto;
+    } 
+    .people p {
+        border-top: dotted 1px rgba(92, 98, 101, .75);
+        font-family: "Crimson Text", serif;
+        font-weight:200;
+        padding-top:20px;
     }
 
     .people ul {
         list-style-type: none;
         padding: 0px;
         margin: 0px;
+    }
+    .people h1{
+          font-size:50px;
+          font-weight:400;
+          text-align:center;
+          font-family: "Quattrocento",sans-serif;
     }
 
     .publications {
@@ -81,6 +92,14 @@
         margin-bottom: 0;
         color: #fffff8;
         padding: 3em 0em 6em 0em;   background: #343434;
+    }
+    .publications p {
+        border-top: dotted 1px rgba(92, 98, 101, .75);
+        font-family: "Crimson Text", serif;
+        font-weight:200;
+        padding-top:20px;
+        width:700px;
+        margin:auto;
     }
 
     .content {
@@ -95,12 +114,51 @@
         font-style: italic;
         font-size: 18px;
     }
+    .projects {
+        margin-top: 5em;
+        margin-bottom: 0;
+        padding: 3em 0em 6em 0em;   color: #343434;
+        background: #fffff8;
+        width: 700px;
+        margin:auto;
+    }
+    .projects p{
+        width: 700px;
+        text-align:left;
+        padding: 3em 0em 6em 0em; 
+        margin:auto;
+      font-family: "Crimson Text", serif;
+                  font-weight:200;
+    }
+    .projects h1{
+          font-size:50px;
+          font-weight:400;
+          text-align:center;
+          padding-bottom:20px
+          font-family: "Quattrocento",sans-serif;
+    }
+    .projects h2{
+          border-bottom: dotted 1px rgba(92, 98, 101, .75);
+          font-size:30px;
+          font-weight:200;
+          text-align:left;
+          padding-bottom:20px
+          font-family: "Quattrocento",sans-serif;
+    }
 
     .manifesto {
         margin-top: 5em;
         margin-bottom: 0;
         padding: 3em 0em 6em 0em;   background: #343434;
         color: #fffff8;
+    }
+    .manifesto p{
+        width: 700px;
+        text-align:left;
+        padding: 3em 0em 6em 0em; 
+        margin:auto;
+      font-family: "Crimson Text", serif;
+                  font-weight:200;
     }
     .text{
         font-family: 'Lustria', serif;
@@ -159,7 +217,85 @@
     <button class="off" id ="butoff">Repair</button>
 </div>
 
-<h2> Coming soon... </h2>
+<div class='manifesto'>
+    <h1>Studying cities</h1>
+    <p>Cities are ever so important in the world.<br>
+
+    We firmly believes that a quantitative understanding of the mechanisms at play
+    in our societies will allow us to design more efficient policies.  
+
+    <br>Our research focuses on the foundations of urban theory. We design empirical
+    methods to get an accurate picture of cities,  and propose simple models to
+    understand them.  In particular, we are interested in the definition of
+    cities and systems of cities, quantifying urban form, scaling relationships
+    and street patterns.  We also have a soft spot for broad societal issues
+    such as residential segregation, economic mobility as well as the efficiency
+    of the electoral system. 
+
+
+    <br>&nbsp;<br>
+    We also believe in Open Science. All our empirical studies are thus
+    completely reproducible. All methods used are packaged into libraries that
+    can be readily used. We believe anyone has the right to know.
+</div>
+
+
+<!--
+<div class='projects'>
+    <h1>Projects</h1>
+    <h2>Cities<h2>
+    <h2>Systems of cities</h2>
+    <h2>Urban networks</h2>
+    <h2>Segregation</h2>
+</div>
+
+<div class='publications'>
+    <h1>Publications</h1>
+    <p>(D3 graph showing publications vs year)<br>
+    All publication data in a .json file</p>
+    <h2> Cities</h2>
+    <p>[1] The polycentric transition of cities<br>
+    [2] From mobility patterns to scaling in cities<br>
+    [3] Scaling and statistics<br>
+    [4] The topology of cities<br>
+    [5] Defining cities<br>
+    [6] Scaling: lost in the smog</p>
+    <h2>Systems of cities</h2>
+    <p>[1] Defining systems of cities<br>
+    [7] The metropolitan blend<br>
+    [8] The law of attractions<br>
+    [9] A globalised world
+    </p>
+    <h2>Urban networks</h2>
+    <p>[1] A typology of street patterns<br>
+    [10] Morphogenesis of urban networks<br> 
+    [11] OpenStreetPatterns<br>
+    [12] The hierarchy of street patterns<br>
+    [13] Understanding the shape of street patterns<br>
+    [14] Scaling in transportation networks<br>
+    [6] Random directed growth of railway networks<br> 
+    [15] Emergence of hierarchy in the cost-driven growth of spatial networks
+    </p>
+    <h2>Segregation</h2>
+    <p>[1] Patterns of residential segregation<br>
+    [10] A likelihood approach to segregation<br> 
+    [11] The scales of residential segregation<br>
+    [15] School segregation: a solution 
+    </p>
+</div>
+-->
+<div class='people'>
+    <h1>Who?</h1>
+    <p>Rémi Louf is a JSMF Postodoctoral Fellow at the Centre for Advanced
+    Spatial Analysis (UCL). He likes yoga and meditation, has a soft spot for poetry and
+    believes in bad coffee.</p>
+    <a href='http://scholar.google.fr/citations?user=OvKlLGsAAAAJ&hl=en'>Publications</a>
+    <a href='http://twitter.com/remilouf'>Twitter</a>
+    <a href='http://www.github.com/rlouf'>Github</a>    
+
+
+</div>
+
 
 <footer>
     -- Copyright &copy <script type="text/javascript">
@@ -167,6 +303,10 @@ var d = new Date()
 document.write(d.getFullYear())
 </script> Scities --
 </footer>
+
+
+
+
 
 </body>
 
