@@ -14,6 +14,7 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 <link href='//fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Lato:300,300italic|Inconsolata' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic' rel='stylesheet' type='text/css'>
 <style>
    html {
@@ -41,9 +42,10 @@
           margin: 0;
           padding-top: 1em;
           font-weight:300;
-          font-family: "Crimson Text", serif;
-              text-transform: uppercase;
+          #font-family: "Lato", serif;
+          text-transform: uppercase;
     }
+
     h1 i{
           font-size: 100px;
           font-style: italic;
@@ -51,14 +53,25 @@
           font-family: "Quattrocento",sans-serif;
           padding-right:5px;
     }
+
     h2 {
           font-size: 25px;
           text-align: center;
           font-style: italic;
-              font-weight:200;
+          font-weight:200;
           margin: 0;
           font-family: "Crimson Text", serif;
     }
+
+    h3 {
+          font-size: 25px;
+          text-align: left;
+          font-style: italic;
+          font-weight:200;
+          margin: 0;
+          font-family: "Lato", serif;
+    }
+
     .people {
         margin-top: 5em;
         margin-bottom: 0;
@@ -67,6 +80,7 @@
         padding: 3em 0em 6em 0em; 
         margin:auto;
     } 
+
     .people p {
         border-top: dotted 1px rgba(92, 98, 101, .75);
         font-family: "Crimson Text", serif;
@@ -79,6 +93,7 @@
         padding: 0px;
         margin: 0px;
     }
+
     .people h1{
           font-size:50px;
           font-weight:400;
@@ -93,6 +108,7 @@
         color: #fffff8;
         padding: 3em 0em 6em 0em;   background: #343434;
     }
+
     .publications p {
         border-top: dotted 1px rgba(92, 98, 101, .75);
         font-family: "Crimson Text", serif;
@@ -147,22 +163,44 @@
     }
 
     .manifesto {
-        margin-top: 5em;
+        margin-top: 0em;
         margin-bottom: 0;
         padding: 3em 0em 6em 0em;   background: #343434;
         color: #fffff8;
-      font-family: "Crimson Text", serif;
+      #font-family: "Crimson Text", serif;
+      font-family: "Inconsolata", serif;
                   font-weight:200;
                     font-size:30;
+    }
+
+    .manifesto h2 {
+        width:700px;
+          font-size: 40px;
+          text-align: center;
+          font-style: italic;
+          font-weight:200;
+          margin: auto;
+          font-family: "Lato", serif;
+    }
+
+    .manifesto h3 {
+        width:700px;
+        padding: 2em 0em 0em 0em;
+          font-size: 25px;
+          text-align: left;
+          font-style: normal;
+          font-weight:200;
+          margin: auto;
+          font-family: "Lato", serif;
     }
     .manifesto p{
         width: 700px;
         text-align:left;
-        padding: 3em 0em 6em 0em; 
+        padding: 0em 0em 0.5em 0em; 
         margin:auto;
       font-family: "Crimson Text", serif;
         font-weight:200;
-        font-size:18px;
+        font-size:20px;
     }
     .b{
         text-align: center;
@@ -170,7 +208,8 @@
         margin:auto;
     }
     .text{
-        font-family: 'Lustria', serif;
+        #font-family: 'Lustria', serif;
+        font-family: 'Inconsolata', serif;
         font-weight: 300;
         font-size: 30px;
         width: 700px;
@@ -227,11 +266,10 @@
 </div>
 
 <div class='manifesto'>
-    <h1>Studying cities</h1>
-    <p>Cities are ever so important in the world.<br>
-
-
-    <br>&nbsp;<br>
+    <h2>Studying cities</h2>
+    
+    <h3>Foundations</h3>
+    <p>
     Our research focuses on the foundations of urban theory. We design empirical
     methods to get an accurate picture of cities,  and propose simple models to
     understand them.  
@@ -239,12 +277,18 @@
     cities and systems of cities, quantifying urban form, scaling relationships
     and street patterns.  We also have a soft spot for broad societal issues
     such as residential segregation, economic mobility as well as the efficiency
-    of the electoral system. 
+    of the electoral system. </p>
 
+    <h3>Towards better policies</h3>
+   
+    <p> 
     <b>We firmly believes that a quantitative understanding of the mechanisms at play
     in our societies will allow us to design more efficient policies.</b>
+    </p>
 
-    <br>&nbsp;<br>
+    <h3>Open Science</h3>
+    
+    <p>
     We also believe in Open Science. All our empirical studies are thus
     completely reproducible. All methods used are packaged into libraries that
     can be readily used. We believe anyone has the right to know.</p>
