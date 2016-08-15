@@ -1,0 +1,237 @@
+html {
+    border-top: 5px solid #343434;
+    border-left: 5px solid #343434;
+    border-right: 5px solid #343434;
+    border-bottom: 5px solid #343434;
+}
+
+body {
+    color: #343434;
+    /*background: oldlace;*/
+    background: oldlace;
+    margin: 0;
+}
+
+.wrapper{
+   padding-bottom:1em;
+}
+
+.title{
+    line-height:40px;
+}
+
+h1 {
+      text-align: center;
+      font-size: 60px;
+      font-style: normal;
+      margin: 0;
+      padding-top: 1em;
+      font-weight:300;
+      #font-family: "Lato", serif;
+      text-transform: uppercase;
+}
+
+h1 i{
+      font-size: 100px;
+      font-style: italic;
+      font-weight:50;
+      font-family: "Quattrocento",sans-serif;
+      padding-right:5px;
+}
+
+h2 {
+      font-size: 25px;
+      text-align: center;
+      font-style: italic;
+      font-weight:200;
+      margin: 0;
+      font-family: "Crimson Text", serif;
+}
+
+h3 {
+      font-size: 25px;
+      text-align: left;
+      font-style: italic;
+      font-weight:200;
+      margin: 0;
+      font-family: "Lato", serif;
+}
+
+.people {
+    margin-top: 5em;
+    margin-bottom: 0;
+    width: 700px;
+    text-align:left;
+    padding: 3em 0em 6em 0em; 
+    margin:auto;
+} 
+
+.people p {
+    border-top: dotted 1px rgba(92, 98, 101, .75);
+    font-family: "Crimson Text", serif;
+    font-weight:200;
+    padding-top:20px;
+}
+
+.people ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.people h1{
+      font-size:50px;
+      font-weight:400;
+      text-align:center;
+      font-family: "Quattrocento",sans-serif;
+}
+
+.publications {
+    margin: auto;
+    margin-top: 5em;
+    margin-bottom: 0;
+    color: #fffff8;
+    padding: 3em 0em 6em 0em;   background: #343434;
+}
+
+.publications p {
+    border-top: dotted 1px rgba(92, 98, 101, .75);
+    font-family: "Crimson Text", serif;
+    font-weight:200;
+    padding-top:20px;
+    width:700px;
+    margin:auto;
+}
+
+.content {
+    width:700px;
+    text-align:left;
+    margin:auto;
+}
+
+.publications h3 {
+    font-family:"Quattrocento", sans-serif;
+    text-align:left;
+    font-style: italic;
+    font-size: 18px;
+}
+.projects {
+    margin-top: 5em;
+    margin-bottom: 0;
+    padding: 3em 0em 6em 0em;   color: #343434;
+    background: #fffff8;
+    width: 700px;
+    margin:auto;
+}
+.projects p{
+    width: 700px;
+    text-align:left;
+    padding: 3em 0em 6em 0em; 
+    margin:auto;
+  font-family: "Crimson Text", serif;
+              font-weight:200;
+}
+.projects h1{
+      font-size:50px;
+      font-weight:400;
+      text-align:center;
+      padding-bottom:20px
+      font-family: "Quattrocento",sans-serif;
+}
+.projects h2{
+      border-bottom: dotted 1px rgba(92, 98, 101, .75);
+      font-size:30px;
+      font-weight:200;
+      text-align:left;
+      padding-bottom:20px
+      font-family: "Quattrocento",sans-serif;
+}
+
+.manifesto {
+    height=100%;
+    margin-top: 0em;
+    margin-bottom: 0;
+    padding: 3em 0em 6em 0em;   background: #343434;
+    color: #fffff8;
+  #font-family: "Crimson Text", serif;
+  font-family: "Inconsolata", serif;
+              font-weight:200;
+                font-size:30;
+}
+
+.manifesto h2 {
+    width:700px;
+      font-size: 40px;
+      text-align: center;
+      font-style: italic;
+      font-weight:200;
+      margin: auto;
+      font-family: "Lato", serif;
+}
+
+.manifesto h3 {
+    width:700px;
+    padding: 2em 0em 0em 0em;
+      font-size: 25px;
+      text-align: left;
+      font-style: bold;
+      font-weight:400;
+      margin: auto;
+      font-family: "Lato", serif;
+}
+
+.manifesto p{
+    width: 700px;
+    text-align:left;
+    padding: 0em 0em 0.5em 0em; 
+    margin:auto;
+  font-family: "Crimson Text", serif;
+    font-weight:200;
+    font-size:20px;
+}
+
+.b{
+    text-align: center;
+    font-weight:200;
+    margin:auto;
+}
+
+.text{
+    #font-family: 'Lustria', serif;
+    font-family: 'Inconsolata', serif;
+    font-weight: 300;
+    font-size: 30px;
+    width: 700px;
+    text-align:left;
+    margin:auto;
+}
+
+footer {
+    text-align: center;
+    background: #fffff8;
+    color: #343434;
+    font-size: 15px;
+    padding-bottom: 0px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.block {
+    fill: #333;
+    stroke: #fff;
+}
+
+.sidenote, .marginnote { float: right;
+                      clear: right;
+                      margin-right: -40%;
+                      width: 30%;
+                      margin-top: 0;
+                      margin-bottom: 0;
+                      font-size: 13px;
+                      line-height: 1.;
+                      vertical-align: baseline;
+                      position: relative; }
+
+.block:hover {
+    fill: #333;
+}
