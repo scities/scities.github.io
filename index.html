@@ -1,430 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset="utf-8">
 <head>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  (function(i,s,o,g,r,a,m){i['googleanalyticsobject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new date();a=s.createelement(o),
+  m=s.getelementsbytagname(o)[0];a.async=1;a.src=g;m.parentnode.insertbefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-61192571-1', 'auto');
+  ga('create', 'ua-61192571-1', 'auto');
   ga('send', 'pageview');
 
 </script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
-<link href='//fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Lato:300,300italic|Inconsolata' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic' rel='stylesheet' type='text/css'>
-<style>
-   html {
-        border-top: 5px solid #343434;
-        border-left: 5px solid #343434;
-        border-right: 5px solid #343434;
-        border-bottom: 5px solid #343434;
-   }
-   body {
-        color: #343434;
-        /*background: oldlace;*/
-        background: oldlace;
-        margin: 0;
-    }
-   .wrapper{
-       padding-bottom:1em;
-    }
-    .title{
-        line-height:40px;
-    }
-    h1 {
-          text-align: center;
-          font-size: 60px;
-          font-style: normal;
-          margin: 0;
-          padding-top: 1em;
-          font-weight:300;
-          #font-family: "Lato", serif;
-          text-transform: uppercase;
-    }
 
-    h1 i{
-          font-size: 100px;
-          font-style: italic;
-          font-weight:50;
-          font-family: "Quattrocento",sans-serif;
-          padding-right:5px;
-    }
 
-    h2 {
-          font-size: 25px;
-          text-align: center;
-          font-style: italic;
-          font-weight:200;
-          margin: 0;
-          font-family: "Crimson Text", serif;
-    }
 
-    h3 {
-          font-size: 25px;
-          text-align: left;
-          font-style: italic;
-          font-weight:200;
-          margin: 0;
-          font-family: "Lato", serif;
-    }
+<link href='//fonts.googleapis.com/css?family=quattrocento' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=lato:300,300italic|inconsolata' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=crimson+text:400,400italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="../jquery.fullPage.css" />
 
-    .people {
-        margin-top: 5em;
-        margin-bottom: 0;
-        width: 700px;
-        text-align:left;
-        padding: 3em 0em 6em 0em; 
-        margin:auto;
-    } 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
-    .people p {
-        border-top: dotted 1px rgba(92, 98, 101, .75);
-        font-family: "Crimson Text", serif;
-        font-weight:200;
-        padding-top:20px;
-    }
-
-    .people ul {
-        list-style-type: none;
-        padding: 0px;
-        margin: 0px;
-    }
-
-    .people h1{
-          font-size:50px;
-          font-weight:400;
-          text-align:center;
-          font-family: "Quattrocento",sans-serif;
-    }
-
-    .publications {
-        margin: auto;
-        margin-top: 5em;
-        margin-bottom: 0;
-        color: #fffff8;
-        padding: 3em 0em 6em 0em;   background: #343434;
-    }
-
-    .publications p {
-        border-top: dotted 1px rgba(92, 98, 101, .75);
-        font-family: "Crimson Text", serif;
-        font-weight:200;
-        padding-top:20px;
-        width:700px;
-        margin:auto;
-    }
-
-    .content {
-        width:700px;
-        text-align:left;
-        margin:auto;
-    }
-
-    .publications h3 {
-        font-family:"Quattrocento", sans-serif;
-        text-align:left;
-        font-style: italic;
-        font-size: 18px;
-    }
-    .projects {
-        margin-top: 5em;
-        margin-bottom: 0;
-        padding: 3em 0em 6em 0em;   color: #343434;
-        background: #fffff8;
-        width: 700px;
-        margin:auto;
-    }
-    .projects p{
-        width: 700px;
-        text-align:left;
-        padding: 3em 0em 6em 0em; 
-        margin:auto;
-      font-family: "Crimson Text", serif;
-                  font-weight:200;
-    }
-    .projects h1{
-          font-size:50px;
-          font-weight:400;
-          text-align:center;
-          padding-bottom:20px
-          font-family: "Quattrocento",sans-serif;
-    }
-    .projects h2{
-          border-bottom: dotted 1px rgba(92, 98, 101, .75);
-          font-size:30px;
-          font-weight:200;
-          text-align:left;
-          padding-bottom:20px
-          font-family: "Quattrocento",sans-serif;
-    }
-
-    .manifesto {
-        margin-top: 0em;
-        margin-bottom: 0;
-        padding: 3em 0em 6em 0em;   background: #343434;
-        color: #fffff8;
-      #font-family: "Crimson Text", serif;
-      font-family: "Inconsolata", serif;
-                  font-weight:200;
-                    font-size:30;
-    }
-
-    .manifesto h2 {
-        width:700px;
-          font-size: 40px;
-          text-align: center;
-          font-style: italic;
-          font-weight:200;
-          margin: auto;
-          font-family: "Lato", serif;
-    }
-
-    .manifesto h3 {
-        width:700px;
-        padding: 2em 0em 0em 0em;
-          font-size: 25px;
-          text-align: left;
-          font-style: normal;
-          font-weight:200;
-          margin: auto;
-          font-family: "Lato", serif;
-    }
-    .manifesto p{
-        width: 700px;
-        text-align:left;
-        padding: 0em 0em 0.5em 0em; 
-        margin:auto;
-      font-family: "Crimson Text", serif;
-        font-weight:200;
-        font-size:20px;
-    }
-    .b{
-        text-align: center;
-        font-weight:200;
-        margin:auto;
-    }
-    .text{
-        #font-family: 'Lustria', serif;
-        font-family: 'Inconsolata', serif;
-        font-weight: 300;
-        font-size: 30px;
-        width: 700px;
-        text-align:left;
-        margin:auto;
-    }
-    footer {
-        text-align: center;
-        background: #fffff8;
-        color: #343434;
-        font-size: 15px;
-        padding-bottom: 0px;
-        margin-top:5px;
-        margin-bottom:5px;
-    }
-
-    .block {
-        fill: #333;
-	stroke: #fff;
-    }
-
-    .sidenote, .marginnote { float: right;
-                          clear: right;
-                          margin-right: -40%;
-                          width: 30%;
-                          margin-top: 0;
-                          margin-bottom: 0;
-                          font-size: 13px;
-                          line-height: 1.;
-                          vertical-align: baseline;
-                          position: relative; }
-
-    .block:hover {
-	fill: #333;
-    }
-</style>
+<link href='style/style.css' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-<div class="title" style="text-align: center">    
-    <h1><i>S</i>cities</h1>
-        <h2>Science of Cities</h2>
-</div>
+<div id="fullpage">
+    <div class='section' id='intro'>
+        <div class="title" style="text-align: center">    
+            <h1><i>s</i>cities</h1>
+                <h2>science of cities</h2>
+        </div>
 
+        <div class="wrapper" style="text-align: center">    
+            <div id="map" style="display: inline-block;"></div>
+        </div>
 
+        <div id="wrapper" style="text-align: center">    
+            <button class="on" id="button">boom!</button>
+            <button class="off" id ="butoff">repair</button>
+        </div>
+    </div>
 
-<div class="wrapper" style="text-align: center">    
-    <div id="map" style="display: inline-block;"></div>
-</div>
+    <div class= 'section' id='manifeste'>
+        <div class='manifesto'>
+            <h2>studying cities</h2>
+            
+            <h3>foundations</h3>
+            <p>
+            Our research focuses on the foundations of urban theory. we design empirical
+            methods to get an accurate picture of cities,  and propose simple models to
+            understand them.  
+            <br>in particular, we are interested in the definition of
+            cities and systems of cities, quantifying urban form, scaling relationships
+            and street patterns.  we also have a soft spot for broad societal issues
+            such as residential segregation, economic mobility as well as the efficiency
+            of the electoral system. </p>
 
-<div id="wrapper" style="text-align: center">    
-    <button class="on" id="button">Boom!</button>
-    <button class="off" id ="butoff">Repair</button>
-</div>
+            <h3>towards better policies</h3>
+           
+            <p> 
+            we firmly believes that a quantitative understanding of the mechanisms at play
+            in our societies will allow us to design more efficient policies.
+            </p>
 
-<div class='manifesto'>
-    <h2>Studying cities</h2>
-    
-    <h3>Foundations</h3>
-    <p>
-    Our research focuses on the foundations of urban theory. We design empirical
-    methods to get an accurate picture of cities,  and propose simple models to
-    understand them.  
-    <br>In particular, we are interested in the definition of
-    cities and systems of cities, quantifying urban form, scaling relationships
-    and street patterns.  We also have a soft spot for broad societal issues
-    such as residential segregation, economic mobility as well as the efficiency
-    of the electoral system. </p>
-
-    <h3>Towards better policies</h3>
-   
-    <p> 
-    <b>We firmly believes that a quantitative understanding of the mechanisms at play
-    in our societies will allow us to design more efficient policies.</b>
-    </p>
-
-    <h3>Open Science</h3>
-    
-    <p>
-    We also believe in Open Science. All our empirical studies are thus
-    completely reproducible. All methods used are packaged into libraries that
-    can be readily used. We believe anyone has the right to know.</p>
-</div>
+            <h3>open science</h3>
+            
+            <p>
+            we also believe in open science. all our empirical studies are thus
+            completely reproducible. all methods used are packaged into libraries that
+            can be readily used. we believe anyone has the right to know.</p>
+        </div>
 
 
 <!--
 <div class='projects'>
-    <h1>Projects</h1>
-    <h2>Cities<h2>
-    <h2>Systems of cities</h2>
-    <h2>Urban networks</h2>
-    <h2>Segregation</h2>
+    <h1>projects</h1>
+    <h2>cities<h2>
+    <h2>systems of cities</h2>
+    <h2>urban networks</h2>
+    <h2>segregation</h2>
 </div>
 
 <div class='publications'>
-    <h1>Publications</h1>
-    <p>(D3 graph showing publications vs year)<br>
-    All publication data in a .json file</p>
-    <h2> Cities</h2>
-    <p>[1] The polycentric transition of cities<br>
-    [2] From mobility patterns to scaling in cities<br>
-    [3] Scaling and statistics<br>
-    [4] The topology of cities<br>
-    [5] Defining cities<br>
-    [6] Scaling: lost in the smog</p>
-    <h2>Systems of cities</h2>
-    <p>[1] Defining systems of cities<br>
-    [7] The metropolitan blend<br>
-    [8] The law of attractions<br>
-    [9] A globalised world
+    <h1>publications</h1>
+    <p>(d3 graph showing publications vs year)<br>
+    all publication data in a .json file</p>
+    <h2> cities</h2>
+    <p>[1] the polycentric transition of cities<br>
+    [2] from mobility patterns to scaling in cities<br>
+    [3] scaling and statistics<br>
+    [4] the topology of cities<br>
+    [5] defining cities<br>
+    [6] scaling: lost in the smog</p>
+    <h2>systems of cities</h2>
+    <p>[1] defining systems of cities<br>
+    [7] the metropolitan blend<br>
+    [8] the law of attractions<br>
+    [9] a globalised world
     </p>
-    <h2>Urban networks</h2>
-    <p>[1] A typology of street patterns<br>
-    [10] Morphogenesis of urban networks<br> 
-    [11] OpenStreetPatterns<br>
-    [12] The hierarchy of street patterns<br>
-    [13] Understanding the shape of street patterns<br>
-    [14] Scaling in transportation networks<br>
-    [6] Random directed growth of railway networks<br> 
-    [15] Emergence of hierarchy in the cost-driven growth of spatial networks
+    <h2>urban networks</h2>
+    <p>[1] a typology of street patterns<br>
+    [10] morphogenesis of urban networks<br> 
+    [11] openstreetpatterns<br>
+    [12] the hierarchy of street patterns<br>
+    [13] understanding the shape of street patterns<br>
+    [14] scaling in transportation networks<br>
+    [6] random directed growth of railway networks<br> 
+    [15] emergence of hierarchy in the cost-driven growth of spatial networks
     </p>
-    <h2>Segregation</h2>
-    <p>[1] Patterns of residential segregation<br>
-    [10] A likelihood approach to segregation<br> 
-    [11] The scales of residential segregation<br>
-    [15] School segregation: a solution 
+    <h2>segregation</h2>
+    <p>[1] patterns of residential segregation<br>
+    [10] a likelihood approach to segregation<br> 
+    [11] the scales of residential segregation<br>
+    [15] school segregation: a solution 
     </p>
 </div>
 <div class='people'>
-    <h1>Who?</h1>
-    <p>Rémi Louf is a JSMF Postodoctoral Fellow at the Centre for Advanced
-    Spatial Analysis (UCL). He likes yoga and meditation, has a soft spot for poetry and
+    <h1>who?</h1>
+    <p>rémi louf is a jsmf postodoctoral fellow at the centre for advanced
+    spatial analysis (ucl). he likes yoga and meditation, has a soft spot for poetry and
     believes in bad coffee.</p>
-    <a href='http://scholar.google.fr/citations?user=OvKlLGsAAAAJ&hl=en'>Publications</a>
-    <a href='http://twitter.com/remilouf'>Twitter</a>
-    <a href='http://www.github.com/rlouf'>Github</a>    
+    <a href='http://scholar.google.fr/citations?user=ovkllgsaaaaj&hl=en'>publications</a>
+    <a href='http://twitter.com/remilouf'>twitter</a>
+    <a href='http://www.github.com/rlouf'>github</a>    
 
 
 </div>
 
 -->
-
-<footer>
-    -- Copyright &copy <script type="text/javascript">
-var d = new Date()
-document.write(d.getFullYear())
-</script> Scities --
-</footer>
-
-
-
-
+    </div>
+    <div class='section' id='foot'>
+        <footer>
+            -- copyright &copy <script type="text/javascript">
+        var d = new date()
+        document.write(d.getfullyear())
+        </script> scities --
+        </footer>
+    </div>
+</div>
 
 </body>
-
-<script>
-
-var blocks = [];                        //Initialize empty array
-for (var i = 0; i < 100000; i++) {           //Loop 25 times
-    var newNumber1 = (Math.random()-0.5) * 50;  //New random number (0-30)
-    var newNumber2 = (Math.random()-0.5) * 50;  //New random number (0-30)
-    blocks.push([newNumber1,newNumber2]);             //Add new number to array
-}
-
-var width = 1000,
-    height = 450;
-
-var svg = d3.select("#map").append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-var button = d3.select("#button"),
-    buttoff = d3.select("#butoff");
-
-var projection = d3.geo.mercator()
-	.center([2.3488000,48.8534100])
-	.scale(170000)
-	.translate([width/2,height/1.7]);
-
-
-var path = d3.geo.path()
-    .projection(projection);
-
-
-// What happens when we click on the button
-button.on("click", function() {
-	console.log("click");
-  svg.selectAll("path")
-  	.data(blocks)
-  	.transition().duration(10000)
-	  	.attr("transform", function(d) { return "translate(" + d[0] + "," + d[1] + ") scale(1, 1)"; })
-});
-
-
-buttoff.on("click", function() {
-	console.log("click");
-  svg.selectAll("path")
-  	.data(blocks)
-  	.transition().duration(10000)
-	  	.attr("transform", function(d) { return "translate(" + 0 + "," + 0 + ") scale(1, 1)"; });
-});
-
-
-
-
-d3.json("data/cities/paris.json", function(error, city) {
-
-	// Plot the world map
-	svg.selectAll("path")
-		.data(city.features)
-			.enter().append("path")
-				.attr("class","block")
-				.attr("d", path);
-
-
-});
-
+<script src="js/boom.js"></script>
+<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+                $('#fullpage').fullpage();
+        });
 </script>
+</html>
