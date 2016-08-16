@@ -18,7 +18,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
 <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css?family=Lato|Quattrocento" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Lato:200,300,400|Quattrocento" rel="stylesheet"> 
 <link href='https://fonts.googleapis.com/css?family=crimson+text:400,400italic' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="../jquery.fullPage.css" />
 
@@ -48,9 +48,9 @@
 
     <div class= 'section' id='manifeste'>
         <div class='manifesto'>
-            <h2>studying cities</h2>
+            <h2>We study cities</h2>
             
-            <h3>foundations</h3>
+            <h3>Scientific foundations</h3>
             <p>
             Our research focuses on the foundations of urban theory. we design empirical
             methods to get an accurate picture of cities,  and propose simple models to
@@ -61,14 +61,14 @@
             such as residential segregation, economic mobility as well as the efficiency
             of the electoral system. </p>
 
-            <h3>towards better policies</h3>
+            <h3>Towards better policies</h3>
            
             <p> 
             we firmly believes that a quantitative understanding of the mechanisms at play
             in our societies will allow us to design more efficient policies.
             </p>
 
-            <h3>open science</h3>
+            <h3>Open science</h3>
             
             <p>
             we also believe in open science. all our empirical studies are thus
@@ -122,14 +122,11 @@
 </div>
 <div class='people'>
     <h1>who?</h1>
-    <p>rémi louf is a jsmf postodoctoral fellow at the centre for advanced
-    spatial analysis (ucl). he likes yoga and meditation, has a soft spot for poetry and
-    believes in bad coffee.</p>
+    <p>rémi louf is a JSMF postodoctoral fellow at the Centre for Advanced
+    Spatial Analysis (CASA) at University College London. He likes yoga and meditation, has a soft spot for poetry and believes in bad coffee.</p>
     <a href='http://scholar.google.fr/citations?user=ovkllgsaaaaj&hl=en'>publications</a>
     <a href='http://twitter.com/remilouf'>twitter</a>
     <a href='http://www.github.com/rlouf'>github</a>    
-
-
 </div>
 
 -->
@@ -149,7 +146,9 @@
 <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
 <script type="text/javascript">
         $(document).ready(function() {
-                $('#fullpage').fullpage();
+            $('#fullpage').fullpage({
+                        sectionsColor: ['oldlace', '#343434', 'oldlace'],
+            });
         });
 </script>
 </html>
